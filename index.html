@@ -34,3 +34,789 @@ body {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 30px 20px;
+    position: relative;
+}
+
+.small {
+    background: rgba(255,255,255,0.9);
+    padding: 12px 25px;
+    border-radius: 50px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+    margin-bottom: 25px;
+    font-size: 16px;
+    animation: fadeDown 1s ease;
+}
+
+h1 {
+    font-size: 55px;
+    color: #9b3158;
+    margin-bottom: 18px;
+    animation: fadeUp 1.2s ease;
+}
+
+.hero p {
+    font-size: 21px;
+    line-height: 1.7;
+    max-width: 700px;
+    animation: fadeUp 1.5s ease;
+}
+
+/* ===== BUTTON ===== */
+
+button {
+    margin-top: 30px;
+    padding: 16px 32px;
+    border: none;
+    border-radius: 40px;
+    background: #9b3158;
+    color: white;
+    font-size: 17px;
+    cursor: pointer;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    transition: 0.3s;
+}
+
+button:hover {
+    transform: scale(1.08);
+    background: #7d2447;
+}
+
+/* ===== SURPRISE ===== */
+
+#surprise {
+    display: none;
+    margin-top: 30px;
+    font-size: 20px;
+    line-height: 1.8;
+    max-width: 650px;
+    background: rgba(255,255,255,0.8);
+    padding: 25px;
+    border-radius: 25px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.12);
+}
+
+/* ===== SECTIONS ===== */
+
+section {
+    padding: 80px 20px;
+    max-width: 1050px;
+    margin: auto;
+}
+
+h2 {
+    color: #8c2f52;
+    font-size: 36px;
+    margin-bottom: 30px;
+}
+
+/* ===== MESSAGE CARD ===== */
+
+.message {
+    background: rgba(255,255,255,0.85);
+    padding: 35px;
+    border-radius: 28px;
+    font-size: 19px;
+    line-height: 1.9;
+    box-shadow: 0 12px 35px rgba(0,0,0,0.12);
+    border: 1px solid rgba(255,255,255,0.8);
+}
+
+/* ===== GALLERY ===== */
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+    gap: 30px;
+    margin-top: 35px;
+}
+
+.photo-card {
+    background: white;
+    padding: 14px;
+    border-radius: 25px;
+    box-shadow: 0 12px 35px rgba(0,0,0,0.15);
+    transition: 0.4s;
+}
+
+.photo-card:hover {
+    transform: translateY(-10px) scale(1.02);
+}
+
+.photo-card img {
+    width: 100%;
+    height: 390px;
+    object-fit: cover;
+    border-radius: 20px;
+    display: block;
+}
+
+.photo-card p {
+    padding: 18px 10px;
+    font-size: 18px;
+    line-height: 1.5;
+}
+
+/* ===== HEART ===== */
+
+.heart {
+    font-size: 55px;
+    animation: beat 1.2s infinite;
+    margin-bottom: 15px;
+}
+
+@keyframes beat {
+    50% {
+        transform: scale(1.25);
+    }
+}
+
+/* ===== FOOTER ===== */
+
+footer {
+    background: #8c2f52;
+    color: white;
+    padding: 45px 20px;
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+}
+
+/* ===== CONFETTI ===== */
+
+.confetti {
+    position: fixed;
+    top: -30px;
+    font-size: 24px;
+    animation: fall 4s linear forwards;
+    pointer-events: none;
+    z-index: 9999;
+}
+
+@keyframes fall {
+    to {
+        transform: translateY(110vh) rotate(720deg);
+        opacity: 0;
+    }
+}
+
+/* ===== ANIMATIONS ===== */
+
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeDown {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ===== MOBILE ===== */
+
+@media (max-width: 600px) {
+
+    h1 {
+        font-size: 39px;
+    }
+
+    h2 {
+        font-size: 29px;
+    }
+
+    .hero p {
+        font-size: 18px;
+    }
+
+    .small {
+        font-size: 14px;
+    }
+
+    .message {
+        padding: 25px 20px;
+        font-size: 17px;
+    }
+
+    .photo-card img {
+        height: 400px;
+    }
+
+    button {
+        font-size: 16px;
+        padding: 14px 25px;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- ===== HERO SECTION ===== -->
+
+<div class="hero">
+
+    <div class="small">
+        🌸 A Little Surprise For You 🌸
+    </div>
+
+    <h1>
+        Happy Teachers' Day! ❤️
+    </h1>
+
+    <p>
+        Some teachers teach lessons...
+        but the best teachers leave memories
+        that stay in our hearts forever. 💐
+    </p>
+
+    <button onclick="showSurprise()">
+        🎁 Open Your Surprise
+    </button>
+
+    <div id="surprise">
+        Thank you for every lesson, every smile,
+        every correction and every moment you
+        believed in us. ❤️
+        <br><br>
+
+        <b>
+            You are truly special to us! 🌸
+        </b>
+    </div>
+
+</div>
+
+
+<!-- ===== MESSAGE ===== -->
+
+<section>
+
+    <h2>
+        💌 A Message For You
+    </h2>
+
+    <div class="message">
+
+        denna madam, ❤️
+
+        <br><br>
+
+        Thank you for being more than just a madam.
+        You have guided us, encouraged us and inspired
+        us to become better every day.
+
+        <br><br>
+
+        The lessons you taught us will not remain
+        only in our notebooks...
+        they will always remain in our hearts.
+
+        <br><br>
+
+        Thank you for believing in us,
+        supporting us and making our journey
+        more meaningful.
+
+        <br><br>
+
+        <b>
+            We are truly lucky to have a teacher like you. 🌷
+        </b>
+
+    </div>
+
+</section>
+
+
+<!-- ===== PHOTOS ===== -->
+
+<section>
+
+    <h2>
+        📸 Beautiful Memories
+    </h2>
+
+    <div class="gallery">
+
+        <div class="photo-card">
+
+            <img
+                src="IMG-20260904-WA0021.jpg"
+                alt="Teacher Memory 1"
+            >
+
+            <p>
+                🌷 A beautiful memory
+                that will always be special.
+            </p>
+
+        </div>
+
+
+        <div class="photo-card">
+
+            <img
+                src="IMG-20260904-WA0022.jpg"
+                alt="Teacher Memory 2"
+            >
+
+            <p>
+                ❤️ Thank you for being
+                a wonderful part of our journey.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ===== FINAL MESSAGE ===== -->
+
+<section>
+
+    <div class="heart">
+        ❤️
+    </div>
+
+    <h2>
+        To Our Wonderful Teacher
+    </h2>
+
+    <div class="message">
+
+        A great teacher doesn't just teach a subject...
+
+        <br><br>
+
+        A great teacher inspires, guides and creates
+        memories that students carry for a lifetime.
+
+        <br><br>
+
+        <b>
+            Happy Teachers' Day, Madam! 🌸💐
+        </b>
+
+        <br><br>
+
+        Thank you for everything. ❤️
+
+    </div>
+
+</section>
+<section class="teacher-section">
+
+    <h2>🌸 Our Wonderful Teacher 🌸</h2>
+
+    <div class="teacher-photo">
+        <img src="IMG-20260904-WA0021.jpg" alt="Our Teacher">
+    </div>
+
+    <h3>once again Happy Teacher's madam❤️</h3>
+       <h4>I miss you so much mam 🥺</h4>
+
+    <p class="student-name">
+         From sailaja
+    </p>
+
+    <button onclick="toggleMusic()">
+        🎵 Play Music
+    </button>
+
+</section>
+
+
+<!-- ===== FOOTER ===== -->
+
+<footer>
+
+    Made with ❤️ and gratitude
+
+    <br><br>
+
+    <b>
+        For a Teacher Who Will Always Be Remembered 🌷
+    </b>
+
+
+}
+<style>
+
+/* ===== RESET ===== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Georgia, "Times New Roman", serif;
+    background: linear-gradient(135deg, #fff1f5, #fff8e7, #eee8ff);
+    color: #4b2940;
+    text-align: center;
+    overflow-x: hidden;
+}
+
+
+/* ===== HERO ===== */
+
+.hero {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 30px 20px;
+}
+
+.small {
+    background: white;
+    padding: 12px 24px;
+    border-radius: 30px;
+    box-shadow: 0 5px 20px #0002;
+    margin-bottom: 25px;
+    font-size: 16px;
+}
+
+h1 {
+    font-size: 52px;
+    color: #9b3158;
+    margin-bottom: 18px;
+}
+
+.hero p {
+    font-size: 20px;
+    line-height: 1.7;
+    max-width: 650px;
+}
+
+
+/* ===== HEADINGS ===== */
+
+h2 {
+    color: #8c2f52;
+    font-size: 35px;
+    margin-bottom: 30px;
+}
+
+
+/* ===== BUTTON ===== */
+
+button {
+    margin-top: 25px;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 30px;
+    background: #9b3158;
+    color: white;
+    font-size: 17px;
+    cursor: pointer;
+    box-shadow: 0 8px 20px #0003;
+    transition: 0.3s;
+}
+
+button:hover {
+    transform: scale(1.07);
+    background: #7d2447;
+}
+
+
+/* ===== SURPRISE ===== */
+
+#surprise {
+    display: none;
+    margin-top: 25px;
+    font-size: 20px;
+    line-height: 1.7;
+    max-width: 600px;
+    background: #ffffffcc;
+    padding: 25px;
+    border-radius: 25px;
+    box-shadow: 0 10px 30px #0002;
+}
+
+
+/* ===== SECTIONS ===== */
+
+section {
+    padding: 70px 20px;
+    max-width: 1050px;
+    margin: auto;
+}
+
+
+/* ===== MESSAGE CARD ===== */
+
+.message {
+    background: #ffffffdd;
+    padding: 32px;
+    border-radius: 25px;
+    font-size: 19px;
+    line-height: 1.8;
+    box-shadow: 0 10px 30px #0002;
+}
+
+
+/* ===== GALLERY ===== */
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 25px;
+    margin-top: 30px;
+}
+
+.photo-card {
+    background: white;
+    padding: 12px;
+    border-radius: 22px;
+    box-shadow: 0 10px 30px #0002;
+    transition: 0.4s;
+}
+
+.photo-card:hover {
+    transform: translateY(-8px);
+}
+
+.photo-card img {
+    width: 100%;
+    height: 360px;
+    object-fit: cover;
+    border-radius: 16px;
+}
+
+.photo-card p {
+    padding: 15px;
+    font-size: 18px;
+}
+
+
+/* ================================= */
+/* ===== TEACHER PHOTO SECTION ===== */
+/* ================================= */
+
+.teacher-section {
+    padding: 80px 20px;
+}
+
+.teacher-photo {
+    width: 250px;
+    height: 250px;
+    margin: 30px auto;
+    padding: 8px;
+
+    border-radius: 50%;
+
+    background: linear-gradient(
+        135deg,
+        #9b3158,
+        #f3a6bd,
+        #ffd166
+    );
+
+    box-shadow:
+        0 12px 35px #0003;
+
+    transition: 0.4s;
+}
+
+.teacher-photo:hover {
+    transform: scale(1.05);
+}
+
+.teacher-photo img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    border-radius: 50%;
+
+    border: 6px solid white;
+}
+
+
+/* ===== FROM sailaja===== */
+
+.teacher-section h3 {
+    font-size: 29px;
+    color: #9b3158;
+    margin-top: 25px;
+}
+
+.student-name {
+    font-size: 23px;
+    color: #6d2947;
+    margin-top: 12px;
+    font-weight: bold;
+}
+
+
+/* ===== HEART ===== */
+
+.heart {
+    font-size: 50px;
+    animation: beat 1.2s infinite;
+}
+
+@keyframes beat {
+
+    50% {
+        transform: scale(1.2);
+    }
+
+}
+
+
+/* ===== FOOTER ===== */
+
+footer {
+    background: #8c2f52;
+    color: white;
+    padding: 45px 20px;
+
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+}
+
+
+/* ===== CONFETTI ===== */
+
+.confetti {
+    position: fixed;
+    top: -20px;
+
+    font-size: 22px;
+
+    animation: fall 4s linear forwards;
+
+    pointer-events: none;
+
+    z-index: 9999;
+}
+
+@keyframes fall {
+
+    to {
+        transform:
+            translateY(110vh)
+            rotate(720deg);
+
+        opacity: 0;
+    }
+
+}
+
+
+/* ===== MOBILE ===== */
+
+@media (max-width: 600px) {
+
+    h1 {
+        font-size: 40px;
+    }
+
+    h2 {
+        font-size: 29px;
+    }
+
+    .hero p {
+        font-size: 18px;
+    }
+
+    .message {
+        padding: 25px 20px;
+        font-size: 17px;
+    }
+
+    .teacher-photo {
+        width: 210px;
+        height: 210px;
+    }
+
+    .teacher-section h3 {
+        font-size: 24px;
+    }
+
+    .student-name {
+        font-size: 20px;
+    }
+
+    .photo-card img {
+        height: 400px;
+    }
+
+}
+
+</style>
+
+</footer>
+
+
+<!-- ===== JAVASCRIPT ===== -->
+
+<script>
+
+function showSurprise() {
+
+    document.getElementById("surprise").style.display = "block";
+
+    const emojis = [
+        "🌸",
+        "❤️",
+        "✨",
+        "🎉",
+        "💐",
+        "⭐"
+    ];
+
+    for (let i = 0; i < 40; i++) {
+
+        const item = document.createElement("span");
+
+        item.className = "confetti";
+
+        item.innerHTML =
+            emojis[Math.floor(Math.random() * emojis.length)];
+
+        item.style.left =
+            Math.random() * 100 + "vw";
+
+        item.style.animationDelay =
+            Math.random() * 1.5 + "s";
+
+        document.body.appendChild(item);
+
+        setTimeout(() => {
+            item.remove();
+        }, 4000);
+    }
+}
+
+</script>
+
+</body>
+</html>
